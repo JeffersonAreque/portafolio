@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- SEO: cambia estos textos por los tuyos -->
+    <title>Tu Nombre | Ingeniero de Software Freelance</title>
+    <meta
+      name="description"
+      content="Ingeniero de software freelance. Desarrollo aplicaciones web rápidas, APIs y soluciones a medida para negocios y startups."
+    />
+    <meta name="author" content="Tu Nombre" />
+
+    <!-- Vista previa al compartir el enlace en redes sociales -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Tu Nombre | Ingeniero de Software Freelance" />
+    <meta
+      property="og:description"
+      content="Desarrollo aplicaciones web rápidas, APIs y soluciones a medida."
+    />
+    <meta property="og:locale" content="es_PE" />
+
+    <meta name="theme-color" content="#020617" />
+
+    <!--
+      Script anti-parpadeo: aplica el tema guardado ANTES de que cargue React,
+      para que la página no aparezca blanca un instante en modo oscuro.
+    -->
+    <script>
+      try {
+        const saved = localStorage.getItem('theme')
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (saved === 'dark' || (!saved && prefersDark)) {
+          document.documentElement.classList.add('dark')
+        }
+      } catch {
+        /* localStorage bloqueado: se usa el tema claro */
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

@@ -1,0 +1,56 @@
+/* Carga Tailwind CSS (v4 no necesita archivo tailwind.config.js) */
+@import "tailwindcss";
+
+/*
+  Modo oscuro por clase: las utilidades `dark:` se activan cuando
+  <html> tiene la clase "dark" (la pone useTheme y el script de index.html).
+*/
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Color de acento del sitio. Cambia estos valores para cambiar todo el estilo. */
+@theme {
+  --color-accent-400: oklch(0.673 0.182 276.935);
+  --color-accent-500: oklch(0.585 0.233 277.117);
+  --color-accent-600: oklch(0.511 0.262 276.966);
+}
+
+html {
+  scroll-behavior: smooth;
+  /* Deja espacio para el menú fijo al saltar a una sección */
+  scroll-padding-top: 5rem;
+  color-scheme: light;
+}
+
+html.dark {
+  color-scheme: dark;
+}
+
+body {
+  @apply bg-slate-50 text-slate-700 antialiased dark:bg-slate-950 dark:text-slate-300;
+}
+
+/* Animación de aparición al hacer scroll (ver hooks/useReveal.js) */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Respeta a quienes prefieren menos movimiento */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
