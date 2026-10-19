@@ -5,7 +5,7 @@ import { useReveal } from '../../hooks/useReveal'
 /* Tarjeta de un proyecto: problema, solución, tecnologías y enlaces. */
 export default function ProjectCard({ project }) {
   const ref = useReveal()
-  const { title, problem, solution, technologies, github, demo } = project
+  const { title, badges = [], problem, solution, technologies, github, demo } = project
 
   return (
     <article
@@ -13,6 +13,19 @@ export default function ProjectCard({ project }) {
       className="reveal flex flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg dark:border-slate-800 dark:bg-slate-900"
     >
       <h3 className="text-xl font-bold text-slate-900 dark:text-white">{title}</h3>
+
+      {badges.length > 0 && (
+        <ul className="mt-3 flex flex-wrap gap-2">
+          {badges.map((badge) => (
+            <li
+              key={badge}
+              className="rounded-md border border-amber-500/40 bg-amber-500/10 px-2 py-0.5 text-xs font-medium text-amber-800 dark:text-amber-300"
+            >
+              {badge}
+            </li>
+          ))}
+        </ul>
+      )}
 
       <dl className="mt-4 space-y-4 text-sm">
         <div>

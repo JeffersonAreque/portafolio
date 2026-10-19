@@ -82,9 +82,12 @@ export default function Hero() {
             <code>
               <span className="text-accent-600 dark:text-accent-400">const</span> desarrollador = {'{'}
               {'\n'}  nombre: <span className="text-emerald-600 dark:text-emerald-400">'{personal.name}'</span>,
-              {'\n'}  enfoque: <span className="text-emerald-600 dark:text-emerald-400">'resultados'</span>,
-              {'\n'}  entregas: <span className="text-emerald-600 dark:text-emerald-400">'a tiempo'</span>,
-              {'\n'}  comunicacion: <span className="text-emerald-600 dark:text-emerald-400">'clara'</span>,
+              {'\n'}  enfoque: [
+              {'\n'}    <span className="text-emerald-600 dark:text-emerald-400">'aplicaciones web'</span>,
+              {'\n'}    <span className="text-emerald-600 dark:text-emerald-400">'inteligencia artificial'</span>,
+              {'\n'}    <span className="text-emerald-600 dark:text-emerald-400">'visión por computadora'</span>,
+              {'\n'}  ],
+              {'\n'}  ubicacion: <span className="text-emerald-600 dark:text-emerald-400">'Puerto Maldonado, Perú'</span>,
               {'\n'}  disponible: <span className="text-amber-600 dark:text-amber-400">{String(personal.available)}</span>,
               {'\n'}{'}'}
             </code>

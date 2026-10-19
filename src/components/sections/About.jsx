@@ -17,7 +17,7 @@ export default function About() {
             {personal.photo ? (
               <img
                 src={personal.photo}
-                alt={`Foto de ${personal.name}`}
+                alt={`Foto de ${personal.fullName}`}
                 width="256"
                 height="256"
                 loading="lazy"

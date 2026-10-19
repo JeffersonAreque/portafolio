@@ -44,12 +44,12 @@ export default function Contact() {
         <SectionTitle
           eyebrow="Contacto"
           title="¿Tienes un proyecto en mente?"
-          subtitle="Cuéntame tu idea y te respondo en menos de 24 horas con una propuesta."
+          subtitle="Cuéntame tu idea y te responderé lo antes posible."
         />
 
-        <div ref={ref} className="reveal grid gap-10 lg:grid-cols-[1fr_2fr]">
-          {/* Contacto directo */}
-          <div>
+        <div ref={ref} className="reveal grid grid-cols-1 gap-10 lg:grid-cols-[1fr_2fr]">
+          {/* Contacto directo (min-w-0 deja que la columna se encoja en pantallas pequeñas) */}
+          <div className="min-w-0">
             <h3 className="text-lg font-bold text-slate-900 dark:text-white">Hablemos directamente</h3>
             <p className="mt-2 text-slate-600 dark:text-slate-400">
               Si prefieres, escríbeme por cualquiera de estos medios:
@@ -63,8 +63,11 @@ export default function Contact() {
                     rel="noopener noreferrer"
                     className="flex items-center gap-3 rounded-xl border border-slate-200 bg-white p-4 font-medium transition hover:border-accent-500 dark:border-slate-800 dark:bg-slate-900 dark:hover:border-accent-400"
                   >
-                    <Icon className="size-5 text-accent-600 dark:text-accent-400" />
-                    {label === 'Correo' ? personal.email : label}
+                    <Icon className="size-5 shrink-0 text-accent-600 dark:text-accent-400" />
+                    {/* break-all permite partir el correo largo en dos líneas si no cabe */}
+                    <span className="min-w-0 break-all">
+                      {label === 'Correo' ? personal.email : label}
+                    </span>
                   </a>
                 </li>
               ))}
