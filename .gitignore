@@ -28,3 +28,6 @@ dist-ssr
 
 # Configuración local de Claude Code
 .claude/settings.local.json
+
+# Repositorio del perfil de GitHub (tiene su propio Git)
+JeffersonAreque/
